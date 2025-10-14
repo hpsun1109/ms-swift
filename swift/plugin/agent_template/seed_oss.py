@@ -77,7 +77,7 @@ class SeedAgentTemplate(BaseAgentTemplate):
 
         if properties:
             docstring_parts.append('\n    Args:')
-            required_params = func.get('parameters', {}).get('required', [])
+            required_params = parameters.get('required', [])
             for name, spec in properties.items():
                 req_tag = '[必填]' if name in required_params else '[选填]'
                 desc = spec.get("description", "")
